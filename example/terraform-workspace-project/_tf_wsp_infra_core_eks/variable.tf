@@ -20,19 +20,19 @@
 #  AWS
 # --------------------------------------------------------------------------
 variable "aws_region" {
-  description = "The AWS region to deploy the ACM certificate in"
+  description = "The AWS region to deploy the Core resource in"
   type        = string
   default     = "ap-southeast-1"
 }
 
 variable "aws_account_id" {
-  description = "The AWS Account ID to deploy the ACM certificate in"
+  description = "The AWS Account ID to deploy the Core resource in"
   type        = string
   default     = "YOUR_AWS_ACCOUNT"
 }
 
 variable "aws_account_profile" {
-  description = "The AWS Profile to deploy the ACM certificate in"
+  description = "The AWS Profile to deploy the Core resource in"
   type        = string
   default     = "default"
 }

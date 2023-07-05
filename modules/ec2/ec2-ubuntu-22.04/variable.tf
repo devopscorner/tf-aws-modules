@@ -1,5 +1,5 @@
 # ==========================================================================
-#  Route53: variable.tf
+#  EC2: variable.tf
 # --------------------------------------------------------------------------
 #  Description:
 #    Global Variable
@@ -20,17 +20,17 @@
 #  AWS
 # --------------------------------------------------------------------------
 variable "aws_region" {
-  description = "The AWS region to deploy the Budget in"
+  description = "The AWS region to deploy the EC2 Instance in"
   type        = string
 }
 
 variable "aws_account_id" {
-  description = "The AWS Account ID to deploy the Budget in"
+  description = "The AWS Account ID to deploy the EC2 Instance in"
   type        = string
 }
 
 variable "aws_account_profile" {
-  description = "The AWS Profile to deploy the Budget in"
+  description = "The AWS Profile to deploy the EC2 Instance in"
   type        = string
 }
 
@@ -92,7 +92,7 @@ variable "tfstate_dynamodb_table" {
 variable "tfstate_path" {
   description = "Path .tfstate in Bucket"
   type        = string
-  default     = "budget/terraform.tfstate"
+  default     = "ec2/terraform.tfstate"
 }
 
 variable "tfstate_encrypt" {

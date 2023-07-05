@@ -20,17 +20,17 @@
 #  AWS
 # --------------------------------------------------------------------------
 variable "aws_region" {
-  description = "The AWS region to deploy the ACM certificate in"
+  description = "The AWS region to deploy the Budget in"
   type        = string
 }
 
 variable "aws_account_id" {
-  description = "The AWS Account ID to deploy the ACM certificate in"
+  description = "The AWS Account ID to deploy the Budget in"
   type        = string
 }
 
 variable "aws_account_profile" {
-  description = "The AWS Profile to deploy the ACM certificate in"
+  description = "The AWS Profile to deploy the Budget in"
   type        = string
 }
 

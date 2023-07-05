@@ -6,6 +6,7 @@
 # --------------------------------------------------------------------------
 #    - KMS Key ID
 #    - KMS Key Environment
+#    - AWS Region
 #    - AWS Account ID
 #    - AWS Account Profile
 #    - Workspace ID

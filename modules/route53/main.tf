@@ -20,9 +20,9 @@ locals {
 # --------------------------------------------------------------------------
 locals {
   tags = {
-    Environment     = "${var.environment[local.workspace_env]}"
+    Environment     = "${var.environment[local.env]}"
     Department      = "${var.department}"
-    DepartmentGroup = "${var.environment[local.workspace_env]}-${var.department}"
+    DepartmentGroup = "${var.environment[local.env]}-${var.department}"
     Terraform       = true
   }
 }

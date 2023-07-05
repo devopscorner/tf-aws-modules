@@ -4,6 +4,7 @@
 #  Description:
 #    Global Variable
 # --------------------------------------------------------------------------
+#    - AWS Region
 #    - AWS Account ID
 #    - AWS Account Profile
 #    - Workspace ID

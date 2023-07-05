@@ -23,11 +23,10 @@ Production Grade Modularity AWS Terraform Modules
 ├── LICENSE
 ├── README.md
 ├── example
-│   ├── terraform-project
-│   │   ├── _tf_infra_core
-│   │   └── _tf_infra_tfstate
 │   ├── terraform-workspace-project
 │   │   ├── _tf_wsp_infra_core
+│   │   ├── _tf_wsp_infra_core_ec2
+│   │   ├── _tf_wsp_infra_core_eks
 │   │   └── _tf_wsp_infra_tfstate
 │   ├── terragrunt-project
 │   │   ├── _tg_infra_core

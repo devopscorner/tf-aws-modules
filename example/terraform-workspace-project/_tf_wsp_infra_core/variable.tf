@@ -1,44 +1,20 @@
 # ==========================================================================
-#  Infra TFState: variable.tf
+#  Infra Core: variable.tf
 # --------------------------------------------------------------------------
 #  Description:
 #    Global Variable
 # --------------------------------------------------------------------------
-#    - KMS Key ID
-#    - KMS Key Environment
+#    - AWS Region
 #    - AWS Account ID
 #    - AWS Account Profile
 #    - Workspace ID
 #    - Workspace Environment
 #    - Global Tags
 #    - Terraform State S3 Bucket Name
-#    - Terraform State S3 Key (Prefix)
 #    - Terraform State S3 DynamoDB Table
+#    - Terraform State S3 Key (Prefix)
+#    - Terraform State S3 Encryption
 # ==========================================================================
-
-# --------------------------------------------------------------------------
-#  KMS Key & Environment
-# --------------------------------------------------------------------------
-variable "kms_key" {
-  type        = map(string)
-  description = "KMS Key References"
-  default = {
-    default = "arn:aws:kms:ap-southeast-1:YOUR_AWS_ACCOUNT:key/CMK_HASH_KEY"
-    lab     = "arn:aws:kms:ap-southeast-1:YOUR_AWS_ACCOUNT:key/CMK_HASH_KEY"
-    staging = "arn:aws:kms:ap-southeast-1:YOUR_AWS_ACCOUNT:key/CMK_HASH_KEY"
-    prod    = "arn:aws:kms:ap-southeast-1:YOUR_AWS_ACCOUNT:key/CMK_HASH_KEY"
-  }
-}
-
-variable "kms_env" {
-  type        = map(string)
-  description = "KMS Key Environment"
-  default = {
-    lab     = "RnD"
-    staging = "Staging"
-    prod    = "Production"
-  }
-}
 
 # --------------------------------------------------------------------------
 #  AWS
@@ -46,7 +22,6 @@ variable "kms_env" {
 variable "aws_region" {
   description = "The AWS region to deploy the ACM certificate in"
   type        = string
-  default     = "ap-southeast-1"
 }
 
 variable "aws_account_id" {
@@ -107,19 +82,19 @@ variable "department" {
 variable "tfstate_bucket" {
   description = "Name of bucket to store tfstate"
   type        = string
-  default     = "devopscorner-terraform-remote-state"
+  default     = "devopscorner-tf-remote-state"
 }
 
 variable "tfstate_dynamodb_table" {
   description = "Name of dynamodb table to store tfstate"
   type        = string
-  default     = "devopscorner-terraform-state-lock"
+  default     = "devopscorner-tf-state-lock"
 }
 
 variable "tfstate_path" {
   description = "Path .tfstate in Bucket"
   type        = string
-  default     = "tfstate/terraform.tfstate"
+  default     = "core/terraform.tfstate"
 }
 
 variable "tfstate_encrypt" {

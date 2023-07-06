@@ -1,4 +1,4 @@
-# Terraform Module EC2 Autoscaling
+# Terraform Module EC2 Ubuntu 22.04 Autoscalinng
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

@@ -1,4 +1,4 @@
-# Terraform Module EC2 Autoscalinng
+# Terraform Module EC2 Ubuntu 22.04 Autoscalinng
 
 ## How-to-Deploy
 

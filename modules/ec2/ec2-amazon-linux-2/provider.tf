@@ -30,9 +30,9 @@ terraform {
 #  AWS Provider Properties
 # --------------------------------------------------------------------------
 provider "aws" {
-  region     = var.aws_region
-  access_key = file("/etc/terraform/aws/credentials/access-key")
-  secret_key = file("/etc/terraform/aws/credentials/secret-key")
+  region = var.aws_region
+  # access_key = file("/etc/terraform/aws/credentials/access-key")
+  # secret_key = file("/etc/terraform/aws/credentials/secret-key")
 
   ## version >= 3.63.0, < 4.0
   # shared_credentials_file = "/etc/terraform/aws/shared/credentials"

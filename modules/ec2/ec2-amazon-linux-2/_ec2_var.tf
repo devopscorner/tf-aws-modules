@@ -31,9 +31,9 @@ variable "instance_name" {
 }
 
 variable "ami_id" {
-  description = "The ID of the Ubuntu AMI"
+  description = "The ID of the Amazon Linux 2 AMI"
   type        = string
-  default     = "ami-0d21214905506a7f4"
+  default     = "ami-06b79cf2aee0d5c92"
 }
 
 variable "instance_type" {
@@ -69,7 +69,7 @@ variable "userdata" {
 variable "userdata_file" {
   description = "The path to the userdata file"
   type        = string
-  default     = "./userdata/ubuntu.sh"
+  default     = "./userdata/amazon-linux-2.sh"
 }
 
 variable "key_pair_name" {

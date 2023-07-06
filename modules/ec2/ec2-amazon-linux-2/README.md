@@ -1,4 +1,4 @@
-# Terraform Module EC2 Ubuntu
+# Terraform Module EC2 Amazon Linux
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -34,7 +34,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_ami_id"></a> [ami\_id](#input\_ami\_id) | The ID of the Ubuntu AMI | `string` | `"ami-0d21214905506a7f4"` | no |
+| <a name="input_ami_id"></a> [ami\_id](#input\_ami\_id) | The ID of the Amazon Linux 2 AMI | `string` | `"ami-06b79cf2aee0d5c92"` | no |
 | <a name="input_aws_account_id"></a> [aws\_account\_id](#input\_aws\_account\_id) | The AWS Account ID to deploy the EC2 Instance in | `string` | n/a | yes |
 | <a name="input_aws_account_profile"></a> [aws\_account\_profile](#input\_aws\_account\_profile) | The AWS Profile to deploy the EC2 Instance in | `string` | n/a | yes |
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to deploy the EC2 Instance in | `string` | n/a | yes |
@@ -55,7 +55,7 @@ No modules.
 | <a name="input_tfstate_encrypt"></a> [tfstate\_encrypt](#input\_tfstate\_encrypt) | Name of bucket to store tfstate | `bool` | `true` | no |
 | <a name="input_tfstate_path"></a> [tfstate\_path](#input\_tfstate\_path) | Path .tfstate in Bucket | `string` | `"ec2/terraform.tfstate"` | no |
 | <a name="input_userdata"></a> [userdata](#input\_userdata) | The userdata script for EC2 instance configuration | `string` | n/a | yes |
-| <a name="input_userdata_file"></a> [userdata\_file](#input\_userdata\_file) | The path to the userdata file | `string` | `"./userdata/ubuntu.sh"` | no |
+| <a name="input_userdata_file"></a> [userdata\_file](#input\_userdata\_file) | The path to the userdata file | `string` | `"./userdata/amazon-linux-2.sh"` | no |
 | <a name="input_volume_size"></a> [volume\_size](#input\_volume\_size) | The size of the EBS volume (in GB) | `number` | n/a | yes |
 | <a name="input_workspace_env"></a> [workspace\_env](#input\_workspace\_env) | Workspace Environment Selection | `map(string)` | <pre>{<br>  "default": "default",<br>  "lab": "rnd",<br>  "prod": "prod",<br>  "staging": "staging"<br>}</pre> | no |
 | <a name="input_workspace_name"></a> [workspace\_name](#input\_workspace\_name) | Workspace Environment Name | `string` | `"default"` | no |

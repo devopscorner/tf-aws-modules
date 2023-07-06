@@ -22,5 +22,13 @@ Production Grade Modularity AWS Terraform Modules
 - Terraform Remote State
 - Terraform Module ACM
 - Terraform Module Budget
+- Terraform Module EC2
+  - Terraform Module EC2 Autoscaling Group
+  - Terraform Module EC2 Ubuntu 22.04 x86
+  - Terraform Module EC2 Ubuntu 22.04 ARM
+  - Terraform Module EC2 Amazon Linux 2 x86
+  - Terraform Module EC2 Amazon Linux 2 ARM
+  - Terraform Module EC2 Amazon Linux 2023 x86
+  - Terraform Module EC2 Amazon Linux 2023 ARM
 - Terraform Module Lightsails
 - Terraform Module Route53

@@ -17,8 +17,9 @@ resource "aws_lightsail_instance" "selected" {
   blueprint_id      = var.blueprint_id
   bundle_id         = var.bundle_id
   key_pair_name     = var.key_pair_name
-  subnet_name       = data.terraform_remote_state.core_state.outputs.subnet_name
-  vpc_id            = data.terraform_remote_state.core_state.outputs.vpc_id
+  ## Remote Terraform State ##
+  subnet_name = data.terraform_remote_state.core_state.outputs.ec2_public_1a
+  vpc_id      = data.terraform_remote_state.core_state.outputs.vpc_id
 }
 
 resource "aws_lightsail_static_ip" "selected" {

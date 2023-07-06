@@ -20,6 +20,14 @@ output "security_group_id" {
   value       = aws_security_group.selected.id
 }
 
+output "public_ip" {
+  value = aws_eip.ec2.public_ip
+}
+
+output "private_ip" {
+  value = aws_eip.ec2.private_ip
+}
+
 output "autoscaling_group_name" {
   description = "The name of the Autoscaling Group"
   value       = aws_autoscaling_group.selected.name

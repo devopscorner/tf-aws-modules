@@ -4,31 +4,40 @@
 #  Description:
 #    EC2 Variable
 # --------------------------------------------------------------------------
+#    - AWS Availability Zone
 #    - Instance Name
 #    - AMI ID
 #    - Instance Type
 #    - Volume Size
-#    - Userdata
 #    - Autoscaling Group Name
 #    - Minimum Size Capacity Autoscaling Group
 #    - Maximum Size Capacity Autoscaling Group
 #    - Desire Size Capacity Autoscaling Group
-#    - Target Group ALB (Application Load Balancer) ARN
-#    - Security Group Name
-#    - Monthly Budget Time Period Start
+#    - Ingress Port
+#    - Ingress Protocol
+#    - Userdata Script
+#    - Userdata File
+#    - Key Pair Name
+#    - Static IP Name
 # ==========================================================================
 
 # --------------------------------------------------------------------------
 #  EC2
 # --------------------------------------------------------------------------
+variable "aws_zone" {
+  description = "The AWS zone to deploy the EC2 Instance in"
+  type        = string
+}
+
 variable "instance_name" {
   description = "The name of the EC2 instance"
   type        = string
 }
 
 variable "ami_id" {
-  description = "The ID of the Ubuntu AMI"
+  description = "The ID of the Ubuntu 22.04 AMI"
   type        = string
+  default     = "ami-0d21214905506a7f4"
 }
 
 variable "instance_type" {
@@ -39,11 +48,6 @@ variable "instance_type" {
 variable "volume_size" {
   description = "The size of the EBS volume (in GB)"
   type        = number
-}
-
-variable "userdata" {
-  description = "The userdata script for EC2 instance configuration"
-  type        = string
 }
 
 variable "asg_name" {
@@ -86,8 +90,23 @@ variable "ingress_protocol" {
   type        = string
 }
 
+variable "userdata" {
+  description = "The userdata script for EC2 instance configuration"
+  type        = string
+}
+
 variable "userdata_file" {
   description = "The path to the userdata file"
   type        = string
   default     = "./userdata/ubuntu.sh"
+}
+
+variable "key_pair_name" {
+  description = "The name of the EC2 key pair"
+  type        = string
+}
+
+variable "static_ip_name" {
+  description = "The name of the EC2 static IP"
+  type        = string
 }

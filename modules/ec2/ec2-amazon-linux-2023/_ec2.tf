@@ -23,7 +23,7 @@ resource "aws_instance" "ec2" {
   tags = merge(
     local.tags,
     {
-      "Name"    = "EC2-UBUNTU-22.04",
+      "Name"    = "EC2-AMAZON-LINUX-2023",
       "Service" = "EC2"
     },
   )

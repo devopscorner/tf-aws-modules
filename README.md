@@ -46,9 +46,8 @@ Production Grade Modularity AWS Terraform Modules
     ├── ec2
     │   ├── ec2-amazon-linux-2
     │   ├── ec2-amazon-linux-2023
-    │   ├── ec2-ubuntu-22.04
-    │   ├── ec2-ubuntu-arm
-    │   └── ec2_auto_scaling_group
+    │   ├── ec2-auto-scaling-group
+    │   └── ec2-ubuntu-22.04
     ├── lightsails
     └── route53
 ```

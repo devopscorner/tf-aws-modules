@@ -1,4 +1,4 @@
-# Terraform Module EC2 Ubuntu
+# Terraform Module EC2 Amazon Linux 2023
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

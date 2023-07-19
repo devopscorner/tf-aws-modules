@@ -49,12 +49,4 @@ provider "aws" {
   #   session_name = "SESSION_NAME"
   #   external_id  = "EXTERNAL_ID"
   # }
-
-  backend "s3" {
-    region         = var.aws_region
-    bucket         = var.tfstate_bucket
-    dynamodb_table = var.tfstate_dynamodb_table
-    key            = var.tfstate_path
-    encrypt        = var.tfstate_encrypt
-  }
 }

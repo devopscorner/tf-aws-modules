@@ -22,6 +22,7 @@
 variable "aws_region" {
   description = "The AWS region to deploy the Core resource in"
   type        = string
+  default     = "ap-southeast-1"
 }
 
 variable "aws_account_id" {

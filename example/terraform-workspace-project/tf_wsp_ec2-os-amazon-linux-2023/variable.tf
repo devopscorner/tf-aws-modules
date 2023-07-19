@@ -1,5 +1,5 @@
 # ==========================================================================
-#  Infra Core: variable.tf
+#  EC2: variable.tf
 # --------------------------------------------------------------------------
 #  Description:
 #    Global Variable
@@ -20,19 +20,19 @@
 #  AWS
 # --------------------------------------------------------------------------
 variable "aws_region" {
-  description = "The AWS region to deploy the Core resource in"
+  description = "The AWS region to deploy the EC2 instance in"
   type        = string
   default     = "ap-southeast-1"
 }
 
 variable "aws_account_id" {
-  description = "The AWS Account ID to deploy the Core resource in"
+  description = "The AWS Account ID to deploy the EC2 instance in"
   type        = string
   default     = "YOUR_AWS_ACCOUNT"
 }
 
 variable "aws_account_profile" {
-  description = "The AWS Profile to deploy the Core resource in"
+  description = "The AWS Profile to deploy the EC2 instance in"
   type        = string
   default     = "default"
 }
@@ -83,19 +83,19 @@ variable "department" {
 variable "tfstate_bucket" {
   description = "Name of bucket to store tfstate"
   type        = string
-  default     = "devopscorner-tf-remote-state"
+  default     = "devopscorner-terraform-remote-state"
 }
 
 variable "tfstate_dynamodb_table" {
   description = "Name of dynamodb table to store tfstate"
   type        = string
-  default     = "devopscorner-tf-state-lock"
+  default     = "devopscorner-terraform-state-lock"
 }
 
 variable "tfstate_path" {
   description = "Path .tfstate in Bucket"
   type        = string
-  default     = "core/terraform.tfstate"
+  default     = "ec2/terraform.tfstate"
 }
 
 variable "tfstate_encrypt" {

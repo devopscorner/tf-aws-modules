@@ -15,8 +15,9 @@ Production Grade Modularity AWS Terraform Modules
 [![license](https://img.shields.io/github/license/devopscorner/tf-aws-modules)](https://img.shields.io/github/license/devopscorner/tf-aws-modules)
 
 ---
-
 ## Version 1.1.0
+
+### Features
 
 - Terraform Workspace Example
   - Terraform Workspace Module EC2 Amazon Linux 2
@@ -26,6 +27,7 @@ Production Grade Modularity AWS Terraform Modules
   - Terraform Workspace Module EC2 for Airflow
   - Terraform Workspace Module EC2 for Jumphost
 
+---
 ## Version 1.0.0
 
 ### Features

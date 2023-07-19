@@ -43,7 +43,14 @@ resource "aws_launch_template" "selected" {
   block_device_mappings {
     device_name = "/dev/sda1"
     ebs {
-      volume_size = var.volume_size
+      volume_size = var.root_volume_size
+    }
+  }
+
+  block_device_mappings {
+    device_name = "/dev/sdb"
+    ebs {
+      volume_size = var.data_volume_size
     }
   }
 

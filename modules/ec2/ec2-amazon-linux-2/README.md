@@ -12,7 +12,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.6.2 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.50.0, < 5.7 |
 | <a name="provider_terraform"></a> [terraform](#provider\_terraform) | n/a |
 
 ## Modules
@@ -39,6 +39,7 @@ No modules.
 | <a name="input_aws_account_profile"></a> [aws\_account\_profile](#input\_aws\_account\_profile) | The AWS Profile to deploy the EC2 Instance in | `string` | n/a | yes |
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to deploy the EC2 Instance in | `string` | n/a | yes |
 | <a name="input_aws_zone"></a> [aws\_zone](#input\_aws\_zone) | The AWS zone to deploy the EC2 Instance in | `string` | n/a | yes |
+| <a name="input_data_volume_size"></a> [data\_volume\_size](#input\_data\_volume\_size) | The size of the EBS volume (in GB) for additional partition | `number` | n/a | yes |
 | <a name="input_department"></a> [department](#input\_department) | Department Owner | `string` | `"DEVOPS"` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Target Environment (tags) | `map(string)` | <pre>{<br>  "default": "DEF",<br>  "lab": "RND",<br>  "prod": "PROD",<br>  "staging": "STG"<br>}</pre> | no |
 | <a name="input_ingress_port"></a> [ingress\_port](#input\_ingress\_port) | The port for ingress traffic in the security group | `number` | n/a | yes |
@@ -48,6 +49,7 @@ No modules.
 | <a name="input_key_pair_name"></a> [key\_pair\_name](#input\_key\_pair\_name) | The name of the EC2 key pair | `string` | n/a | yes |
 | <a name="input_remote_tfstate_bucket"></a> [remote\_tfstate\_bucket](#input\_remote\_tfstate\_bucket) | Name of bucket to load references tfstate | `string` | `"devopscorner-terraform-remote-state"` | no |
 | <a name="input_remote_tfstate_path"></a> [remote\_tfstate\_path](#input\_remote\_tfstate\_path) | Path remote references of .tfstate in Bucket | `string` | `"core/terraform.tfstate"` | no |
+| <a name="input_root_volume_size"></a> [root\_volume\_size](#input\_root\_volume\_size) | The size of the EBS volume (in GB) for root partition | `number` | n/a | yes |
 | <a name="input_security_group_name"></a> [security\_group\_name](#input\_security\_group\_name) | The name of the EC2 instance security group | `string` | n/a | yes |
 | <a name="input_static_ip_name"></a> [static\_ip\_name](#input\_static\_ip\_name) | The name of the EC2 static IP | `string` | n/a | yes |
 | <a name="input_tfstate_bucket"></a> [tfstate\_bucket](#input\_tfstate\_bucket) | Name of bucket to store tfstate | `string` | `"devopscorner-terraform-remote-state"` | no |
@@ -56,7 +58,6 @@ No modules.
 | <a name="input_tfstate_path"></a> [tfstate\_path](#input\_tfstate\_path) | Path .tfstate in Bucket | `string` | `"ec2/terraform.tfstate"` | no |
 | <a name="input_userdata"></a> [userdata](#input\_userdata) | The userdata script for EC2 instance configuration | `string` | n/a | yes |
 | <a name="input_userdata_file"></a> [userdata\_file](#input\_userdata\_file) | The path to the userdata file | `string` | `"./userdata/amazon-linux-2.sh"` | no |
-| <a name="input_volume_size"></a> [volume\_size](#input\_volume\_size) | The size of the EBS volume (in GB) | `number` | n/a | yes |
 | <a name="input_workspace_env"></a> [workspace\_env](#input\_workspace\_env) | Workspace Environment Selection | `map(string)` | <pre>{<br>  "default": "default",<br>  "lab": "rnd",<br>  "prod": "prod",<br>  "staging": "staging"<br>}</pre> | no |
 | <a name="input_workspace_name"></a> [workspace\_name](#input\_workspace\_name) | Workspace Environment Name | `string` | `"default"` | no |
 

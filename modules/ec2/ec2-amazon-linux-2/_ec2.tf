@@ -32,15 +32,15 @@ resource "aws_instance" "ec2" {
   root_block_device {
     device_name           = "/dev/sda1"
     delete_on_termination = true
-    volume_size           = var.volume_size
-    volume_type           = "gp2"
+    volume_size           = var.root_volume_size
+    volume_type           = "gp3"
   }
 
   ebs_block_device {
     device_name           = "/dev/sdb"
     delete_on_termination = true
-    volume_size           = var.volume_size
-    volume_type           = "gp2"
+    volume_size           = var.data_volume_size
+    volume_type           = "gp3"
   }
 
   ## Userdata Script ##

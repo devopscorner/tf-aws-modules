@@ -41,8 +41,13 @@ variable "instance_type" {
   type        = string
 }
 
-variable "volume_size" {
-  description = "The size of the EBS volume (in GB)"
+variable "root_volume_size" {
+  description = "The size of the EBS volume (in GB) for root partition"
+  type        = number
+}
+
+variable "data_volume_size" {
+  description = "The size of the EBS volume (in GB) for additional partition"
   type        = number
 }
 

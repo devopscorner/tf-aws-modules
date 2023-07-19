@@ -4,7 +4,9 @@ Production Grade Modularity AWS Terraform Modules
 
 ![all contributors](https://img.shields.io/github/contributors/devopscorner/tf-aws-modules)
 ![tags](https://img.shields.io/github/v/tag/devopscorner/tf-aws-modules?sort=semver)
+![terraform](https://img.shields.io/static/v1?logo=terraform&logoColor=white&label=terraform&message=1.5.2&color=orange)
 ![download all](https://img.shields.io/github/downloads/devopscorner/tf-aws-modules/total.svg)
+![download latest](https://img.shields.io/github/downloads/devopscorner/tf-aws-modules/1.1.0/total)
 ![view](https://views.whatilearened.today/views/github/devopscorner/tf-aws-modules.svg)
 ![clone](https://img.shields.io/badge/dynamic/json?color=success&label=clone&query=count&url=https://raw.githubusercontent.com/devopscorner/tf-aws-modules/master/clone.json?raw=True&logo=github)
 ![issues](https://img.shields.io/github/issues/devopscorner/tf-aws-modules)
@@ -27,7 +29,13 @@ Production Grade Modularity AWS Terraform Modules
 │   │   ├── _tf_wsp_infra_core
 │   │   ├── _tf_wsp_infra_core_ec2
 │   │   ├── _tf_wsp_infra_core_eks
-│   │   └── _tf_wsp_infra_tfstate
+│   │   ├── _tf_wsp_infra_tfstate
+│   │   ├── tf_wsp_ec2-auto-scaling-group
+│   │   ├── tf_wsp_ec2-for-airflow
+│   │   ├── tf_wsp_ec2-for-jumphost
+│   │   ├── tf_wsp_ec2-os-amazon-linux-2
+│   │   ├── tf_wsp_ec2-os-amazon-linux-2023
+│   │   └── tf_wsp_ec2-os-ubuntu-22.04
 │   ├── terragrunt-project
 │   │   ├── _tg_infra_core
 │   │   └── _tg_infra_tfstate

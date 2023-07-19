@@ -95,7 +95,7 @@ variable "tfstate_dynamodb_table" {
 variable "tfstate_path" {
   description = "Path .tfstate in Bucket"
   type        = string
-  default     = "ec2/terraform.tfstate"
+  default     = "ec2/airflow/terraform.tfstate"
 }
 
 variable "tfstate_encrypt" {

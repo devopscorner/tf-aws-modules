@@ -1,4 +1,4 @@
-# Modularity Terraform AWS
+# Modularity Terraform AWS (OpenTofu)
 
 Production Grade Modularity AWS Terraform Modules
 
@@ -13,6 +13,18 @@ Production Grade Modularity AWS Terraform Modules
 ![forks](https://img.shields.io/github/forks/devopscorner/tf-aws-modules)
 ![stars](https://img.shields.io/github/stars/devopscorner/tf-aws-modules)
 [![license](https://img.shields.io/github/license/devopscorner/tf-aws-modules)](https://img.shields.io/github/license/devopscorner/tf-aws-modules)
+
+---
+## Version 1.2.0
+
+### Features
+
+- Added Terraform EKS Modules
+  - Terraform Workspace Module EKS DevOps
+  - Terraform Workspace Module EKS Golang
+  - Terraform Workspace Module EKS Laravel
+  - Terraform Workspace Module EKS Nifi
+- Using OpenTofu (`tofu`) as default running terraform
 
 ---
 ## Version 1.1.0

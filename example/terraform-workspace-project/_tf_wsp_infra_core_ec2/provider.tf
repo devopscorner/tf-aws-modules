@@ -31,12 +31,14 @@ terraform {
 # --------------------------------------------------------------------------
 provider "aws" {
   region = var.aws_region
+
   # access_key = file("/etc/terraform/aws/credentials/access-key")
   # secret_key = file("/etc/terraform/aws/credentials/secret-key")
 
   ## version >= 3.63.0, < 4.0
-  # shared_credentials_file = "/etc/terraform/aws/shared/credentials"
-  # profile                 = var.aws_account_profile
+  # shared_credentials_file  = "$HOME/.aws/devopscorner/credentials"
+  # shared_credentials_file  = "/etc/terraform/aws/shared/credentials"
+  # profile                  = var.aws_account_profile
 
   ## version >= 4.0
   # shared_config_files      = ["/etc/terraform/aws/shared/config"]

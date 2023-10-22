@@ -5,47 +5,47 @@
 - Terraform Initialize
 
   ```
-  terraform init
+  tofu init
   ```
 
 - List Existing Workspace
 
   ```
-  terraform workspace list
+  tofu workspace list
   ```
 
 - Create Workspace
 
   ```
-  terraform workspace new [environment]
+  tofu workspace new [environment]
   ---
   eg:
-  terraform workspace new lab
-  terraform workspace new staging
-  terraform workspace new prod
+  tofu workspace new lab
+  tofu workspace new staging
+  tofu workspace new prod
   ```
 
 - Use Workspace
 
   ```
-  terraform workspace select [environment]
+  tofu workspace select [environment]
   ---
   eg:
-  terraform workspace select lab
-  terraform workspace select staging
-  terraform workspace select prod
+  tofu workspace select lab
+  tofu workspace select staging
+  tofu workspace select prod
   ```
 
 - Terraform Planning
 
   ```
-  terraform plan
+  tofu plan
   ```
 
 - Terraform Provisioning
 
   ```
-  terraform apply
+  tofu apply
   ```
 
 ## Migrate State
@@ -59,13 +59,13 @@
 - Initiate Migrate
 
   ```
-  terraform init --migrate-state
+  tofu init --migrate-state
   ```
 
 ## Cleanup Environment
 
 ```
-terraform destroy
+tofu destroy
 ```
 
 ## Copyright

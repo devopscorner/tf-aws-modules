@@ -32,9 +32,9 @@ locals {
   subnet_id  = "${var.env[local.env]}" == "lab" ? data.terraform_remote_state.core_state.outputs.ec2_public_1a[0] : data.terraform_remote_state.core_state.outputs.ec2_public_1b[0]
 }
 
-# ------------------------------------
+# --------------------------------------------------------------------------
 #  Existing Zone ID (DNS)
-# ------------------------------------
+# --------------------------------------------------------------------------
 locals {
   domain      = "${var.instance_name}-${var.env[local.env]}.${var.dns_url[local.env]}"
   domain_name = trimsuffix(local.domain, ".")

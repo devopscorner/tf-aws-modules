@@ -1,4 +1,4 @@
-# Modularity Terraform AWS
+# Modularity Terraform AWS (OpenTofu)
 
 Production Grade Modularity AWS Terraform Modules
 
@@ -35,7 +35,10 @@ Production Grade Modularity AWS Terraform Modules
 │   │   ├── tf_wsp_ec2-for-jumphost
 │   │   ├── tf_wsp_ec2-os-amazon-linux-2
 │   │   ├── tf_wsp_ec2-os-amazon-linux-2023
-│   │   └── tf_wsp_ec2-os-ubuntu-22.04
+│   │   ├── tf_wsp_ec2-os-ubuntu-22.04
+│   │   ├── tf_wsp_eks-golang
+│   │   ├── tf_wsp_eks-laravel
+│   │   └── tf_wsp_eks-nifi
 │   ├── terragrunt-project
 │   │   ├── _tg_infra_core
 │   │   └── _tg_infra_tfstate
@@ -56,6 +59,15 @@ Production Grade Modularity AWS Terraform Modules
     │   ├── ec2-amazon-linux-2023
     │   ├── ec2-auto-scaling-group
     │   └── ec2-ubuntu-22.04
+    ├── eks
+    │   ├── _manifest
+    │   ├── _scripts
+    │   ├── _tags
+    │   ├── nodegroup-cicd
+    │   ├── nodegroup-golang
+    │   ├── nodegroup-laravel
+    │   ├── nodegroup-nifi
+    │   └── nodegroup-redis
     ├── lightsails
     └── route53
 ```
@@ -156,6 +168,15 @@ Production Grade Modularity AWS Terraform Modules
       random = ">= 2.0"
     }
   }
+  ```
+
+- OpenTofu
+
+  ```
+  tofu version
+  ---
+  OpenTofu v1.6.0-alpha3
+  on linux_amd64
   ```
 
 ## Security Check

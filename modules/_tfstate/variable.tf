@@ -93,6 +93,9 @@ variable "environment" {
   }
 }
 
+# --------------------------------------------------------------------------
+#  Department Tags
+# --------------------------------------------------------------------------
 variable "department" {
   description = "Department Owner"
   type        = string

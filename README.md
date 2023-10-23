@@ -171,6 +171,23 @@ Production Grade Modularity AWS Terraform Modules
   }
   ```
 
+- OpenTofu Provider
+
+  ```
+  terraform {
+    required_version = ">= 1.5.0"
+
+    required_providers {
+      aws = {
+        source  = "opentofu/aws"
+        version = ">= 4.50.0, < 5.7"
+      }
+
+      random = ">= 2.0"
+    }
+  }
+  ```
+
 - OpenTofu AMD 64-bit
 
   ```

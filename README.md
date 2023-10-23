@@ -36,6 +36,7 @@ Production Grade Modularity AWS Terraform Modules
 │   │   ├── tf_wsp_ec2-os-amazon-linux-2
 │   │   ├── tf_wsp_ec2-os-amazon-linux-2023
 │   │   ├── tf_wsp_ec2-os-ubuntu-22.04
+│   │   ├── tf_wsp_eks-devops
 │   │   ├── tf_wsp_eks-golang
 │   │   ├── tf_wsp_eks-laravel
 │   │   └── tf_wsp_eks-nifi
@@ -170,13 +171,22 @@ Production Grade Modularity AWS Terraform Modules
   }
   ```
 
-- OpenTofu
+- OpenTofu AMD 64-bit
 
   ```
   tofu version
   ---
   OpenTofu v1.6.0-alpha3
   on linux_amd64
+  ```
+
+- OpenTofu ARM 64-bit
+
+  ```
+  tofu version
+  ---
+  OpenTofu v1.6.0-alpha3
+  on darwin_arm64
   ```
 
 ## Security Check

@@ -114,7 +114,7 @@ variable "tfstate_bucket" {
 variable "tfstate_dynamodb_table" {
   description = "Name of dynamodb table to store tfstate"
   type        = string
-  default     = "devopscorner-terraform-state-lock"
+  default     = "devopscorner-tf-state-lock"
 }
 
 variable "tfstate_path" {

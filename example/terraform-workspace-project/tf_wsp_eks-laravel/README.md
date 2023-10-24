@@ -28,6 +28,51 @@
 
 | Name | Type |
 |------|------|
+| [aws_autoscaling_group_tag.Autoscaler_enable_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Autoscaler_enable_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Autoscaler_enable_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Autoscaler_ownership_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Autoscaler_ownership_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Autoscaler_ownership_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Clustername_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Clustername_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Clustername_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.DepartmentGroup_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.DepartmentGroup_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.DepartmentGroup_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Department_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Department_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Department_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Environment_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Environment_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Environment_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Name_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Name_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Name_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.ProductGroup_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.ProductGroup_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.ProductGroup_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.ProductName_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.ProductName_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.ProductName_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.ResourceGroup_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.ResourceGroup_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.ResourceGroup_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Services_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Services_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Services_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Terraform_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Terraform_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Terraform_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Type_group_tag_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Type_group_tag_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_group_tag.Type_group_tag_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group_tag) | resource |
+| [aws_autoscaling_schedule.scale_down_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_schedule) | resource |
+| [aws_autoscaling_schedule.scale_down_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_schedule) | resource |
+| [aws_autoscaling_schedule.scale_down_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_schedule) | resource |
+| [aws_autoscaling_schedule.scale_up_laravel_dev](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_schedule) | resource |
+| [aws_autoscaling_schedule.scale_up_laravel_prod](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_schedule) | resource |
+| [aws_autoscaling_schedule.scale_up_laravel_uat](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_schedule) | resource |
 | [aws_eks_cluster.aws_eks](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/eks_cluster) | resource |
 | [aws_eks_node_group.laravel](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/eks_node_group) | resource |
 | [aws_iam_openid_connect_provider.cluster](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/iam_openid_connect_provider) | resource |
@@ -96,8 +141,17 @@
 | <a name="output_eks_cluster_certificat_authority"></a> [eks\_cluster\_certificat\_authority](#output\_eks\_cluster\_certificat\_authority) | -------------------------------------------------------------------------- EKS Cluster Certificate Authority -------------------------------------------------------------------------- |
 | <a name="output_eks_cluster_endpoint"></a> [eks\_cluster\_endpoint](#output\_eks\_cluster\_endpoint) | -------------------------------------------------------------------------- EKS Cluster Endpoint -------------------------------------------------------------------------- |
 | <a name="output_eks_cluster_name"></a> [eks\_cluster\_name](#output\_eks\_cluster\_name) | -------------------------------------------------------------------------- EKS Cluster Name -------------------------------------------------------------------------- |
+| <a name="output_eks_node_asg_group_laravel_dev"></a> [eks\_node\_asg\_group\_laravel\_dev](#output\_eks\_node\_asg\_group\_laravel\_dev) | -------------------------------------------------------------------------- Autoscaling Node Group Output -------------------------------------------------------------------------- |
+| <a name="output_eks_node_asg_group_laravel_prod"></a> [eks\_node\_asg\_group\_laravel\_prod](#output\_eks\_node\_asg\_group\_laravel\_prod) | -------------------------------------------------------------------------- Autoscaling Node Group Output -------------------------------------------------------------------------- |
+| <a name="output_eks_node_asg_group_laravel_uat"></a> [eks\_node\_asg\_group\_laravel\_uat](#output\_eks\_node\_asg\_group\_laravel\_uat) | -------------------------------------------------------------------------- Autoscaling Node Group Output -------------------------------------------------------------------------- |
 | <a name="output_eks_node_name_laravel_dev"></a> [eks\_node\_name\_laravel\_dev](#output\_eks\_node\_name\_laravel\_dev) | -------------------------------------------------------------------------- Node Group Output -------------------------------------------------------------------------- # DEV Output ## |
 | <a name="output_eks_node_name_laravel_uat"></a> [eks\_node\_name\_laravel\_uat](#output\_eks\_node\_name\_laravel\_uat) | # UAT Output ## |
+| <a name="output_eks_node_scale_down_laravel_dev"></a> [eks\_node\_scale\_down\_laravel\_dev](#output\_eks\_node\_scale\_down\_laravel\_dev) | -------------------------------------------------------------------------- Autoscaling Output -------------------------------------------------------------------------- # Scale Down ## |
+| <a name="output_eks_node_scale_down_laravel_prod"></a> [eks\_node\_scale\_down\_laravel\_prod](#output\_eks\_node\_scale\_down\_laravel\_prod) | -------------------------------------------------------------------------- Autoscaling Output -------------------------------------------------------------------------- # Scale Down ## |
+| <a name="output_eks_node_scale_down_laravel_uat"></a> [eks\_node\_scale\_down\_laravel\_uat](#output\_eks\_node\_scale\_down\_laravel\_uat) | -------------------------------------------------------------------------- Autoscaling Output -------------------------------------------------------------------------- # Scale Down ## |
+| <a name="output_eks_node_scale_up_laravel_dev"></a> [eks\_node\_scale\_up\_laravel\_dev](#output\_eks\_node\_scale\_up\_laravel\_dev) | # Scale Up ## |
+| <a name="output_eks_node_scale_up_laravel_prod"></a> [eks\_node\_scale\_up\_laravel\_prod](#output\_eks\_node\_scale\_up\_laravel\_prod) | # Scale Up ## |
+| <a name="output_eks_node_scale_up_laravel_uat"></a> [eks\_node\_scale\_up\_laravel\_uat](#output\_eks\_node\_scale\_up\_laravel\_uat) | # Scale Up ## |
 | <a name="output_eks_node_tg_laravel_dev"></a> [eks\_node\_tg\_laravel\_dev](#output\_eks\_node\_tg\_laravel\_dev) | -------------------------------------------------------------------------- Target Group Output -------------------------------------------------------------------------- # DEV Output ## |
 | <a name="output_eks_node_tg_laravel_uat"></a> [eks\_node\_tg\_laravel\_uat](#output\_eks\_node\_tg\_laravel\_uat) | ## UAT Output ## |
 | <a name="output_eks_security_group"></a> [eks\_security\_group](#output\_eks\_security\_group) | -------------------------------------------------------------------------- EKS Security Group -------------------------------------------------------------------------- |

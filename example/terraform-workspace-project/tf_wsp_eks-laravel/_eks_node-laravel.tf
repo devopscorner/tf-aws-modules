@@ -38,7 +38,7 @@ resource "aws_eks_node_group" "laravel" {
   version        = var.k8s_version[local.env]
 
   labels = {
-    "environment" = "${var.env[local.env]}",
+    "environment" = "${var.eks_name_env[local.env]}",
     "node"        = "${local.node_selector_laravel}-${each.key}"
     "department"  = "softeng"
     "productname" = "devopscorner-${each.key}"
@@ -65,10 +65,10 @@ resource "aws_eks_node_group" "laravel" {
 
   tags = merge(
     {
-      "ClusterName"                                                             = "${var.eks_cluster_name}-${var.env[local.env]}"
-      "k8s.io/cluster-autoscaler/${var.eks_cluster_name}-${var.env[local.env]}" = "owned",
-      "k8s.io/cluster-autoscaler/enabled"                                       = "true"
-      "Terraform"                                                               = "true"
+      "ClusterName"                                                                      = "${var.eks_cluster_name}-${var.eks_name_env[local.env]}"
+      "k8s.io/cluster-autoscaler/${var.eks_cluster_name}-${var.eks_name_env[local.env]}" = "owned",
+      "k8s.io/cluster-autoscaler/enabled"                                                = "true"
+      "Terraform"                                                                        = "true"
     },
     {
       Environment     = "${upper(each.key)}"
@@ -98,7 +98,7 @@ resource "aws_eks_node_group" "laravel" {
 resource "aws_lb_target_group" "laravel" {
   for_each = (local.env == "prod" ? toset(["prod"]) : toset(["dev", "uat"]))
 
-  name     = "tg-${local.node_selector_laravel}-${var.env[local.env]}-${each.key}"
+  name     = "tg-${local.node_selector_laravel}-${var.eks_name_env[local.env]}-${each.key}"
   port     = "${each.key}" == "dev" ? 30580 : 30680
   protocol = "HTTP"
   vpc_id   = data.terraform_remote_state.core_state.outputs.vpc_id
@@ -121,34 +121,34 @@ resource "aws_lb_target_group" "laravel" {
 #  Node Group Output
 # --------------------------------------------------------------------------
 ## DEV Output ##
-# output "eks_node_name_laravel_dev" {
-#   value = aws_eks_node_group.laravel["dev"].id
-# }
+output "eks_node_name_laravel_dev" {
+  value = aws_eks_node_group.laravel["dev"].id
+}
 
 ## UAT Output ##
-# output "eks_node_name_laravel_uat" {
-#   value = aws_eks_node_group.laravel["uat"].id
-# }
+output "eks_node_name_laravel_uat" {
+  value = aws_eks_node_group.laravel["uat"].id
+}
 
 ## PROD Output ##
-output "eks_node_name_laravel_prod" {
-  value = aws_eks_node_group.laravel["prod"].id
-}
+# output "eks_node_name_laravel_prod" {
+#   value = aws_eks_node_group.laravel["prod"].id
+# }
 
 # --------------------------------------------------------------------------
 #  Target Group Output
 # --------------------------------------------------------------------------
 ## DEV Output ##
-# output "eks_node_tg_laravel_dev" {
-#   value = aws_lb_target_group.laravel["dev"].id
-# }
+output "eks_node_tg_laravel_dev" {
+  value = aws_lb_target_group.laravel["dev"].id
+}
 
 # ## UAT Output ##
-# output "eks_node_tg_laravel_uat" {
-#   value = aws_lb_target_group.laravel["uat"].id
-# }
+output "eks_node_tg_laravel_uat" {
+  value = aws_lb_target_group.laravel["uat"].id
+}
 
 ## PROD Output ##
-output "eks_node_tg_laravel_prod" {
-  value = aws_lb_target_group.laravel["prod"].id
-}
+# output "eks_node_tg_laravel_prod" {
+#   value = aws_lb_target_group.laravel["prod"].id
+# }

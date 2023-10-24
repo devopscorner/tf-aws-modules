@@ -38,7 +38,7 @@ resource "aws_eks_node_group" "goapp" {
   version        = var.k8s_version[local.env]
 
   labels = {
-    "environment" = "${var.env[local.env]}",
+    "environment" = "${var.eks_name_env[local.env]}",
     "node"        = "${local.node_selector_goapp}-${each.key}"
     "department"  = "softeng"
     "productname" = "devopscorner-${each.key}"
@@ -65,10 +65,10 @@ resource "aws_eks_node_group" "goapp" {
 
   tags = merge(
     {
-      "ClusterName"                                                             = "${var.eks_cluster_name}-${var.env[local.env]}"
-      "k8s.io/cluster-autoscaler/${var.eks_cluster_name}-${var.env[local.env]}" = "owned",
-      "k8s.io/cluster-autoscaler/enabled"                                       = "true"
-      "Terraform"                                                               = "true"
+      "ClusterName"                                                                      = "${var.eks_cluster_name}-${var.eks_name_env[local.env]}"
+      "k8s.io/cluster-autoscaler/${var.eks_cluster_name}-${var.eks_name_env[local.env]}" = "owned",
+      "k8s.io/cluster-autoscaler/enabled"                                                = "true"
+      "Terraform"                                                                        = "true"
     },
     {
       Environment     = "${upper(each.key)}"
@@ -103,8 +103,8 @@ resource "aws_eks_node_group" "goapp" {
 #   type              = "gp3"
 #   tags = merge(
 #     {
-#       "ClusterName"                                                             = "${var.eks_cluster_name}-${var.env[local.env]}"
-#       "k8s.io/cluster-autoscaler/${var.eks_cluster_name}-${var.env[local.env]}" = "owned",
+#       "ClusterName"                                                             = "${var.eks_cluster_name}-${var.eks_name_env[local.env]}"
+#       "k8s.io/cluster-autoscaler/${var.eks_cluster_name}-${var.eks_name_env[local.env]}" = "owned",
 #       "k8s.io/cluster-autoscaler/enabled"                                       = "true"
 #       "Terraform"                                                               = "true"
 #     },
@@ -136,7 +136,7 @@ resource "aws_eks_node_group" "goapp" {
 resource "aws_lb_target_group" "goapp" {
   for_each = (local.env == "prod" ? toset(["prod"]) : toset(["dev", "uat"]))
 
-  name     = "tg-${local.node_selector_goapp}-${var.env[local.env]}-${each.key}"
+  name     = "tg-${local.node_selector_goapp}-${var.eks_name_env[local.env]}-${each.key}"
   port     = "${each.key}" == "dev" ? 30380 : 30480
   protocol = "HTTP"
   vpc_id   = data.terraform_remote_state.core_state.outputs.vpc_id
@@ -159,34 +159,34 @@ resource "aws_lb_target_group" "goapp" {
 #  Node Group Output
 # --------------------------------------------------------------------------
 ## DEV Output ##
-# output "eks_node_name_goapp_dev" {
-#   value = aws_eks_node_group.goapp["dev"].id
-# }
+output "eks_node_name_goapp_dev" {
+  value = aws_eks_node_group.goapp["dev"].id
+}
 
 ## UAT Output ##
-# output "eks_node_name_goapp_uat" {
-#   value = aws_eks_node_group.goapp["uat"].id
-# }
+output "eks_node_name_goapp_uat" {
+  value = aws_eks_node_group.goapp["uat"].id
+}
 
 ## PROD Output ##
-output "eks_node_name_goapp_prod" {
-  value = aws_eks_node_group.goapp["prod"].id
-}
+# output "eks_node_name_goapp_prod" {
+#   value = aws_eks_node_group.goapp["prod"].id
+# }
 
 # --------------------------------------------------------------------------
 #  Target Group Output
 # --------------------------------------------------------------------------
 ## DEV Output ##
-# output "eks_node_tg_goapp_dev" {
-#   value = aws_lb_target_group.goapp["dev"].id
-# }
+output "eks_node_tg_goapp_dev" {
+  value = aws_lb_target_group.goapp["dev"].id
+}
 
 # ## UAT Output ##
-# output "eks_node_tg_goapp_uat" {
-#   value = aws_lb_target_group.goapp["uat"].id
-# }
+output "eks_node_tg_goapp_uat" {
+  value = aws_lb_target_group.goapp["uat"].id
+}
 
 ## PROD Output ##
-output "eks_node_tg_goapp_prod" {
-  value = aws_lb_target_group.goapp["prod"].id
-}
+# output "eks_node_tg_goapp_prod" {
+#   value = aws_lb_target_group.goapp["prod"].id
+# }

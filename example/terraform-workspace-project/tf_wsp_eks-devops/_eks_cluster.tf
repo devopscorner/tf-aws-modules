@@ -13,7 +13,7 @@
 # --------------------------------------------------------------------------
 locals {
   resources_tags = {
-    Name          = "${var.env[local.env]}" == "prod" ? "${var.eks_cluster_name}" : "${var.eks_cluster_name}-${var.env[local.env]}",
+    Name          = "${var.eks_name_env[local.env]}" == "prod" ? "${var.eks_cluster_name}" : "${var.eks_cluster_name}-${var.eks_name_env[local.env]}",
     ResourceGroup = "${var.environment[local.env]}-EKS-DEVOPSCORNER"
   }
 }
@@ -68,7 +68,7 @@ users:
         - "eks"
         - "get-token"
         - "--cluster-name"
-        - "${var.eks_cluster_name}-${var.env[local.env]}"
+        - "${var.eks_cluster_name}-${var.eks_name_env[local.env]}"
       command: aws
 KUBECONFIG
 }
@@ -82,7 +82,7 @@ data "aws_vpc" "selected" {
 
 resource "aws_eks_cluster" "aws_eks" {
   enabled_cluster_log_types = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
-  name                      = "${var.eks_cluster_name}-${var.env[local.env]}"
+  name                      = "${var.eks_cluster_name}-${var.eks_name_env[local.env]}"
   role_arn                  = aws_iam_role.eks_cluster.arn
   version                   = var.k8s_version[local.env]
 
@@ -101,20 +101,20 @@ resource "aws_eks_cluster" "aws_eks" {
     local.tags,
     local.resources_tags,
     {
-      "ClusterName"                                                             = "${var.eks_cluster_name}-${var.env[local.env]}",
-      "k8s.io/cluster-autoscaler/${var.eks_cluster_name}-${var.env[local.env]}" = "owned",
-      "k8s.io/cluster-autoscaler/enabled"                                       = "true",
-      "Terraform"                                                               = "true"
+      "ClusterName"                                                                      = "${var.eks_cluster_name}-${var.eks_name_env[local.env]}",
+      "k8s.io/cluster-autoscaler/${var.eks_cluster_name}-${var.eks_name_env[local.env]}" = "owned",
+      "k8s.io/cluster-autoscaler/enabled"                                                = "true",
+      "Terraform"                                                                        = "true"
     },
     {
       Environment     = "${upper(var.environment[local.env])}"
       Name            = "EKS-${var.k8s_version[local.env]}-${upper(var.eks_cluster_name)}-${upper(var.environment[local.env])}"
       Type            = "PRODUCTS"
       ProductName     = "EKS-DEVOPSCORNER"
-      ProductGroup    = "${var.env[local.env]}" == "prod" ? "PROD-EKS-DEVOPSCORNER" : "STG-EKS-DEVOPSCORNER"
+      ProductGroup    = "${var.eks_name_env[local.env]}" == "prod" ? "PROD-EKS-DEVOPSCORNER" : "STG-EKS-DEVOPSCORNER"
       Department      = "DEVOPS"
-      DepartmentGroup = "${var.env[local.env]}" == "prod" ? "PROD-DEVOPS" : "STG-DEVOPS"
-      ResourceGroup   = "${var.env[local.env]}" == "prod" ? "PROD-EKS-DEVOPSCORNER" : "STG-EKS-DEVOPSCORNER"
+      DepartmentGroup = "${var.eks_name_env[local.env]}" == "prod" ? "PROD-DEVOPS" : "STG-DEVOPS"
+      ResourceGroup   = "${var.eks_name_env[local.env]}" == "prod" ? "PROD-EKS-DEVOPSCORNER" : "STG-EKS-DEVOPSCORNER"
       Services        = "EKS"
     }
   )

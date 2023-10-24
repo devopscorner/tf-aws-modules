@@ -86,7 +86,7 @@ variable "department" {
 variable "tfstate_bucket" {
   description = "Name of bucket to store tfstate"
   type        = string
-  default     = "devopscorner-terraform-remote-state"
+  default     = "devopscorner-tf-remote-state"
 }
 
 variable "tfstate_dynamodb_table" {

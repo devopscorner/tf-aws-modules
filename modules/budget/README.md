@@ -56,7 +56,7 @@ No modules.
 | <a name="input_monthly_forcasted_time_period_start"></a> [monthly\_forcasted\_time\_period\_start](#input\_monthly\_forcasted\_time\_period\_start) | Monthly Forcasted Time Period Start | `string` | `"2023-01-01_00:00"` | no |
 | <a name="input_monthly_forcasted_time_unit"></a> [monthly\_forcasted\_time\_unit](#input\_monthly\_forcasted\_time\_unit) | Monthly Forcasted Time Unit | `string` | `"MONTHLY"` | no |
 | <a name="input_monthly_forcasted_type"></a> [monthly\_forcasted\_type](#input\_monthly\_forcasted\_type) | Monthly Forcasted Type | `string` | `"COST"` | no |
-| <a name="input_tfstate_bucket"></a> [tfstate\_bucket](#input\_tfstate\_bucket) | Name of bucket to store tfstate | `string` | `"devopscorner-terraform-remote-state"` | no |
+| <a name="input_tfstate_bucket"></a> [tfstate\_bucket](#input\_tfstate\_bucket) | Name of bucket to store tfstate | `string` | `"devopscorner-tf-remote-state"` | no |
 | <a name="input_tfstate_dynamodb_table"></a> [tfstate\_dynamodb\_table](#input\_tfstate\_dynamodb\_table) | Name of dynamodb table to store tfstate | `string` | `"devopscorner-terraform-state-lock"` | no |
 | <a name="input_tfstate_encrypt"></a> [tfstate\_encrypt](#input\_tfstate\_encrypt) | Name of bucket to store tfstate | `bool` | `true` | no |
 | <a name="input_tfstate_path"></a> [tfstate\_path](#input\_tfstate\_path) | Path .tfstate in Bucket | `string` | `"budget/terraform.tfstate"` | no |

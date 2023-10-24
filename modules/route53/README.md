@@ -41,9 +41,9 @@ No modules.
 | <a name="input_record_records"></a> [record\_records](#input\_record\_records) | The records associated with the Route53 record | `list(string)` | n/a | yes |
 | <a name="input_record_ttl"></a> [record\_ttl](#input\_record\_ttl) | The TTL (Time to Live) of the Route53 record | `number` | n/a | yes |
 | <a name="input_record_type"></a> [record\_type](#input\_record\_type) | The type of the Route53 record | `string` | n/a | yes |
-| <a name="input_remote_tfstate_bucket"></a> [remote\_tfstate\_bucket](#input\_remote\_tfstate\_bucket) | Name of bucket to load references tfstate | `string` | `"devopscorner-terraform-remote-state"` | no |
+| <a name="input_remote_tfstate_bucket"></a> [remote\_tfstate\_bucket](#input\_remote\_tfstate\_bucket) | Name of bucket to load references tfstate | `string` | `"devopscorner-tf-remote-state"` | no |
 | <a name="input_remote_tfstate_path"></a> [remote\_tfstate\_path](#input\_remote\_tfstate\_path) | Path remote references of .tfstate in Bucket | `string` | `"core/terraform.tfstate"` | no |
-| <a name="input_tfstate_bucket"></a> [tfstate\_bucket](#input\_tfstate\_bucket) | Name of bucket to store tfstate | `string` | `"devopscorner-terraform-remote-state"` | no |
+| <a name="input_tfstate_bucket"></a> [tfstate\_bucket](#input\_tfstate\_bucket) | Name of bucket to store tfstate | `string` | `"devopscorner-tf-remote-state"` | no |
 | <a name="input_tfstate_dynamodb_table"></a> [tfstate\_dynamodb\_table](#input\_tfstate\_dynamodb\_table) | Name of dynamodb table to store tfstate | `string` | `"devopscorner-terraform-state-lock"` | no |
 | <a name="input_tfstate_encrypt"></a> [tfstate\_encrypt](#input\_tfstate\_encrypt) | Name of bucket to store tfstate | `bool` | `true` | no |
 | <a name="input_tfstate_path"></a> [tfstate\_path](#input\_tfstate\_path) | Path .tfstate in Bucket | `string` | `"route53/terraform.tfstate"` | no |

@@ -120,7 +120,7 @@ variable "tfstate_encrypt" {
 variable "tfstate_bucket" {
   type        = string
   description = "Name of bucket to store tfstate"
-  default     = "devopscorner-terraform-remote-state"
+  default     = "devopscorner-tf-remote-state"
 }
 
 variable "tfstate_dynamodb_table" {

@@ -23,8 +23,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_lightsail_instance.selected](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lightsail_instance) | resource |
-| [aws_lightsail_static_ip.selected](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lightsail_static_ip) | resource |
+| [aws_lightsail_instance.selected](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/lightsail_instance) | resource |
+| [aws_lightsail_static_ip.selected](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/lightsail_static_ip) | resource |
 | [terraform_remote_state.core_state](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 
 ## Inputs
@@ -32,9 +32,9 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_availability_zone"></a> [availability\_zone](#input\_availability\_zone) | The availability zone for the Lightsail instance | `string` | n/a | yes |
-| <a name="input_aws_account_id"></a> [aws\_account\_id](#input\_aws\_account\_id) | The AWS Account ID to deploy the ACM certificate in | `string` | n/a | yes |
-| <a name="input_aws_account_profile"></a> [aws\_account\_profile](#input\_aws\_account\_profile) | The AWS Profile to deploy the ACM certificate in | `string` | n/a | yes |
-| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to deploy the ACM certificate in | `string` | n/a | yes |
+| <a name="input_aws_account_id"></a> [aws\_account\_id](#input\_aws\_account\_id) | The AWS Account ID to deploy the Lightsail instance in | `string` | n/a | yes |
+| <a name="input_aws_account_profile"></a> [aws\_account\_profile](#input\_aws\_account\_profile) | The AWS Profile to deploy the Lightsail instance in | `string` | n/a | yes |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to deploy the Lightsail instance in | `string` | n/a | yes |
 | <a name="input_blueprint_id"></a> [blueprint\_id](#input\_blueprint\_id) | The ID of the Lightsail blueprint | `string` | n/a | yes |
 | <a name="input_bundle_id"></a> [bundle\_id](#input\_bundle\_id) | The ID of the Lightsail bundle | `string` | n/a | yes |
 | <a name="input_department"></a> [department](#input\_department) | Department Owner | `string` | `"DEVOPS"` | no |

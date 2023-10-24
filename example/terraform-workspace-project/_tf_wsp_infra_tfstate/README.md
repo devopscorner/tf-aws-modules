@@ -13,8 +13,8 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.6.2 |
-| <a name="provider_random"></a> [random](#provider\_random) | 3.5.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.50.0, < 5.7 |
+| <a name="provider_random"></a> [random](#provider\_random) | >= 2.0 |
 
 ## Modules
 
@@ -27,12 +27,12 @@
 
 | Name | Type |
 |------|------|
-| [aws_iam_role.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role.this](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/iam_role) | resource |
 | [random_pet.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet) | resource |
-| [aws_canonical_user_id.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/canonical_user_id) | data source |
-| [aws_cloudfront_log_delivery_canonical_user_id.cloudfront](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/cloudfront_log_delivery_canonical_user_id) | data source |
-| [aws_iam_policy_document.bucket_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
-| [aws_kms_key.cmk_key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/kms_key) | data source |
+| [aws_canonical_user_id.current](https://registry.terraform.io/providers/opentofu/aws/latest/docs/data-sources/canonical_user_id) | data source |
+| [aws_cloudfront_log_delivery_canonical_user_id.cloudfront](https://registry.terraform.io/providers/opentofu/aws/latest/docs/data-sources/cloudfront_log_delivery_canonical_user_id) | data source |
+| [aws_iam_policy_document.bucket_policy](https://registry.terraform.io/providers/opentofu/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_kms_key.cmk_key](https://registry.terraform.io/providers/opentofu/aws/latest/docs/data-sources/kms_key) | data source |
 
 ## Inputs
 

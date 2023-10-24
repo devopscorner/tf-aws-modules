@@ -23,14 +23,14 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_autoscaling_attachment.selected](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_attachment) | resource |
-| [aws_autoscaling_group.selected](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group) | resource |
-| [aws_eip.ec2](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eip) | resource |
-| [aws_instance.ec2](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
-| [aws_launch_template.selected](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/launch_template) | resource |
-| [aws_security_group.selected](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [aws_security_group_rule.ssh](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.web](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
+| [aws_autoscaling_attachment.selected](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_attachment) | resource |
+| [aws_autoscaling_group.selected](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/autoscaling_group) | resource |
+| [aws_eip.ec2](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/eip) | resource |
+| [aws_instance.ec2](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/instance) | resource |
+| [aws_launch_template.selected](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/launch_template) | resource |
+| [aws_security_group.selected](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/security_group) | resource |
+| [aws_security_group_rule.ssh](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.web](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/security_group_rule) | resource |
 | [terraform_remote_state.core_state](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 
 ## Inputs

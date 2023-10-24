@@ -22,16 +22,16 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_budgets_budget.monthly_budget](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/budgets_budget) | resource |
-| [aws_budgets_budget.monthly_forcasted](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/budgets_budget) | resource |
+| [aws_budgets_budget.monthly_budget](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/budgets_budget) | resource |
+| [aws_budgets_budget.monthly_forcasted](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/budgets_budget) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_aws_account_id"></a> [aws\_account\_id](#input\_aws\_account\_id) | The AWS Account ID to deploy the ACM certificate in | `string` | n/a | yes |
-| <a name="input_aws_account_profile"></a> [aws\_account\_profile](#input\_aws\_account\_profile) | The AWS Profile to deploy the ACM certificate in | `string` | n/a | yes |
-| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to deploy the ACM certificate in | `string` | n/a | yes |
+| <a name="input_aws_account_id"></a> [aws\_account\_id](#input\_aws\_account\_id) | The AWS Account ID to deploy the Budget in | `string` | n/a | yes |
+| <a name="input_aws_account_profile"></a> [aws\_account\_profile](#input\_aws\_account\_profile) | The AWS Profile to deploy the Budget in | `string` | n/a | yes |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to deploy the Budget in | `string` | n/a | yes |
 | <a name="input_department"></a> [department](#input\_department) | Department Owner | `string` | `"DEVOPS"` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Target Environment (tags) | `map(string)` | <pre>{<br>  "default": "DEF",<br>  "lab": "RND",<br>  "prod": "PROD",<br>  "staging": "STG"<br>}</pre> | no |
 | <a name="input_monthly_budget_limit_amount"></a> [monthly\_budget\_limit\_amount](#input\_monthly\_budget\_limit\_amount) | Monthly Budget Limit Amount | `string` | `"150"` | no |

@@ -22,8 +22,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_acm_certificate.selected](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate) | resource |
-| [aws_acm_certificate_validation.selected](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate_validation) | resource |
+| [aws_acm_certificate.selected](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/acm_certificate) | resource |
+| [aws_acm_certificate_validation.selected](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/acm_certificate_validation) | resource |
 
 ## Inputs
 

@@ -12,7 +12,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.6.2 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.50.0, < 5.7 |
 
 ## Modules
 
@@ -22,29 +22,29 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_eip.eks](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eip) | resource |
-| [aws_internet_gateway.igw](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway) | resource |
-| [aws_nat_gateway.eks_ngw](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/nat_gateway) | resource |
-| [aws_route_table.igw_eks_rt_public_a](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table) | resource |
-| [aws_route_table.igw_eks_rt_public_b](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table) | resource |
-| [aws_route_table.igw_eks_rt_public_c](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table) | resource |
-| [aws_route_table.nat_eks_rt_private_a](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table) | resource |
-| [aws_route_table.nat_eks_rt_private_b](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table) | resource |
-| [aws_route_table.nat_eks_rt_private_c](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table) | resource |
-| [aws_route_table_association.igw_eks_rt_public_1a](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association) | resource |
-| [aws_route_table_association.igw_eks_rt_public_1b](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association) | resource |
-| [aws_route_table_association.igw_eks_rt_public_1c](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association) | resource |
-| [aws_route_table_association.nat_eks_rt_private_1a](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association) | resource |
-| [aws_route_table_association.nat_eks_rt_private_1b](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association) | resource |
-| [aws_route_table_association.nat_eks_rt_private_1c](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association) | resource |
-| [aws_security_group.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [aws_subnet.eks_private_a](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
-| [aws_subnet.eks_private_b](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
-| [aws_subnet.eks_private_c](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
-| [aws_subnet.eks_public_a](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
-| [aws_subnet.eks_public_b](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
-| [aws_subnet.eks_public_c](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
-| [aws_vpc.infra_vpc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc) | resource |
+| [aws_eip.eks](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/eip) | resource |
+| [aws_internet_gateway.igw](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/internet_gateway) | resource |
+| [aws_nat_gateway.eks_ngw](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/nat_gateway) | resource |
+| [aws_route_table.igw_eks_rt_public_a](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route_table) | resource |
+| [aws_route_table.igw_eks_rt_public_b](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route_table) | resource |
+| [aws_route_table.igw_eks_rt_public_c](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route_table) | resource |
+| [aws_route_table.nat_eks_rt_private_a](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route_table) | resource |
+| [aws_route_table.nat_eks_rt_private_b](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route_table) | resource |
+| [aws_route_table.nat_eks_rt_private_c](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route_table) | resource |
+| [aws_route_table_association.igw_eks_rt_public_1a](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route_table_association) | resource |
+| [aws_route_table_association.igw_eks_rt_public_1b](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route_table_association) | resource |
+| [aws_route_table_association.igw_eks_rt_public_1c](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route_table_association) | resource |
+| [aws_route_table_association.nat_eks_rt_private_1a](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route_table_association) | resource |
+| [aws_route_table_association.nat_eks_rt_private_1b](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route_table_association) | resource |
+| [aws_route_table_association.nat_eks_rt_private_1c](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route_table_association) | resource |
+| [aws_security_group.default](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/security_group) | resource |
+| [aws_subnet.eks_private_a](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/subnet) | resource |
+| [aws_subnet.eks_private_b](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/subnet) | resource |
+| [aws_subnet.eks_private_c](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/subnet) | resource |
+| [aws_subnet.eks_public_a](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/subnet) | resource |
+| [aws_subnet.eks_public_b](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/subnet) | resource |
+| [aws_subnet.eks_public_c](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/subnet) | resource |
+| [aws_vpc.infra_vpc](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/vpc) | resource |
 
 ## Inputs
 

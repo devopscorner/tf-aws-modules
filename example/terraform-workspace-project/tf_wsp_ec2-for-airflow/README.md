@@ -23,11 +23,11 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_eip.airflow](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eip) | resource |
-| [aws_elb.airflow](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elb) | resource |
-| [aws_instance.airflow](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
-| [aws_route53_record.airflow](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
-| [aws_security_group.selected](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
+| [aws_eip.airflow](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/eip) | resource |
+| [aws_elb.airflow](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/elb) | resource |
+| [aws_instance.airflow](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/instance) | resource |
+| [aws_route53_record.airflow](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/route53_record) | resource |
+| [aws_security_group.selected](https://registry.terraform.io/providers/opentofu/aws/latest/docs/resources/security_group) | resource |
 | [terraform_remote_state.core_state](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) | data source |
 
 ## Inputs

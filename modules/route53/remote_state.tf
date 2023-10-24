@@ -28,7 +28,7 @@ data "terraform_remote_state" "core_state" {
 variable "remote_tfstate_bucket" {
   description = "Name of bucket to load references tfstate"
   type        = string
-  default     = "devopscorner-terraform-remote-state"
+  default     = "devopscorner-tf-remote-state"
 }
 
 variable "remote_tfstate_path" {

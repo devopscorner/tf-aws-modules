@@ -13,14 +13,14 @@
 #============================================
 locals {
   #for tagging
-  Environment_monitoring     = "PROD"
+  Environment_monitoring     = "RND"
   Name_monitoring            = "EKS-1.27-DEVOPSCORNER-MONITORING"
   Type_monitoring            = "PRODUCTS"
   ProductName_monitoring     = "EKS-DEVOPSCORNER"
   ProductGroup_monitoring    = "MONITORING-EKS-DEVOPSCORNER"
   Department_monitoring      = "DEVOPS"
-  DepartmentGroup_monitoring = "PROD-DEVOPS"
-  ResourceGroup_monitoring   = "PROD-EKS-DEVOPSCORNER"
+  DepartmentGroup_monitoring = "RND-DEVOPS"
+  ResourceGroup_monitoring   = "RND-EKS-DEVOPSCORNER"
   Services_monitoring        = "MONITORING"
 }
 

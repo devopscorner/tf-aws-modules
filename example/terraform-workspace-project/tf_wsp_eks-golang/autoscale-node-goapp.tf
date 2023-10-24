@@ -1,5 +1,5 @@
 # ==========================================================================
-#  EKS: autoscale-node-devops.tf (EKS Autoscale Configuration)
+#  EKS: autoscale-node-goapp.tf (EKS Autoscale Configuration)
 # --------------------------------------------------------------------------
 #  Description
 # --------------------------------------------------------------------------
@@ -9,19 +9,19 @@
 # ==========================================================================
 
 #============================================
-# NODE GROUP - DEVOPSCORNER MONITORING & TOOLS
+# NODE GROUP - GOAPP - PROD
 #============================================
 locals {
   #for tagging
-  Environment_monitoring     = "PROD"
-  Name_monitoring            = "EKS-1.27-DEVOPSCORNER-MONITORING"
-  Type_monitoring            = "PRODUCTS"
-  ProductName_monitoring     = "EKS-DEVOPSCORNER"
-  ProductGroup_monitoring    = "MONITORING-EKS-DEVOPSCORNER"
-  Department_monitoring      = "DEVOPS"
-  DepartmentGroup_monitoring = "PROD-DEVOPS"
-  ResourceGroup_monitoring   = "PROD-EKS-DEVOPSCORNER"
-  Services_monitoring        = "MONITORING"
+  Environment_goapp_prod     = "PROD"
+  Name_goapp_prod            = "EKS-1.27-GOAPP-PROD"
+  Type_goapp_prod            = "PROJECTS"
+  ProductName_goapp_prod     = "EKS-DEVOPSCORNER"
+  ProductGroup_goapp_prod    = "PROD-EKS-DEVOPSCORNER"
+  Department_goapp_prod      = "SOFTENG"
+  DepartmentGroup_goapp_prod = "PROD-SOFTENG"
+  ResourceGroup_goapp_prod   = "PROD-EKS-DEVOPSCORNER"
+  Services_goapp_prod        = "GOAPP"
 }
 
 # --------------------------------------------------------------------------
@@ -32,20 +32,20 @@ locals {
 # - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_attachment
 
 ## Scale Down
-resource "aws_autoscaling_schedule" "scale_down_devops_monitoring" {
-  autoscaling_group_name = aws_eks_node_group.devops["monitoring"].resources[0].autoscaling_groups[0].name
-  desired_capacity       = 1
-  max_size               = 1
-  min_size               = 1
+resource "aws_autoscaling_schedule" "scale_down_goapp_prod" {
+  autoscaling_group_name = aws_eks_node_group.goapp["prod"].resources[0].autoscaling_groups[0].name
+  desired_capacity       = 0
+  max_size               = 0
+  min_size               = 0
   recurrence             = "0 13,16 * * *"
   scheduled_action_name  = "scale_down"
   # start_time           = "2022-03-25T13:00:00Z"
 }
 
 ## Scale Up
-resource "aws_autoscaling_schedule" "scale_up_devops_monitoring" {
-  autoscaling_group_name = aws_eks_node_group.devops["monitoring"].resources[0].autoscaling_groups[0].name
-  desired_capacity       = 3
+resource "aws_autoscaling_schedule" "scale_up_goapp_prod" {
+  autoscaling_group_name = aws_eks_node_group.goapp["prod"].resources[0].autoscaling_groups[0].name
+  desired_capacity       = 1
   max_size               = 5
   min_size               = 1
   recurrence             = "0 0 * * MON-FRI"
@@ -56,138 +56,137 @@ resource "aws_autoscaling_schedule" "scale_up_devops_monitoring" {
 # --------------------------------------------------------------------------
 #  Autoscaling Tag
 # --------------------------------------------------------------------------
-# Monitoring
-resource "aws_autoscaling_group_tag" "Environment_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "Environment_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
   tag {
     key                 = "Environment"
-    value               = local.Environment_monitoring
+    value               = local.Environment_goapp_prod
     propagate_at_launch = true
   }
 }
 
-resource "aws_autoscaling_group_tag" "Name_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "Name_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
   tag {
     key                 = "Name"
-    value               = local.Name_monitoring
+    value               = local.Name_goapp_prod
     propagate_at_launch = true
   }
 }
 
-resource "aws_autoscaling_group_tag" "Type_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "Type_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
   tag {
     key                 = "Type"
-    value               = local.Type_monitoring
+    value               = local.Type_goapp_prod
     propagate_at_launch = true
   }
 }
 
-resource "aws_autoscaling_group_tag" "ProductName_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "ProductName_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
   tag {
     key                 = "ProductName"
-    value               = local.ProductName_monitoring
+    value               = local.ProductName_goapp_prod
     propagate_at_launch = true
   }
 }
 
-resource "aws_autoscaling_group_tag" "ProductGroup_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "ProductGroup_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
   tag {
     key                 = "ProductGroup"
-    value               = local.ProductGroup_monitoring
+    value               = local.ProductGroup_goapp_prod
     propagate_at_launch = true
   }
 }
 
-resource "aws_autoscaling_group_tag" "Department_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "Department_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
   tag {
     key                 = "Department"
-    value               = local.Department_monitoring
+    value               = local.Department_goapp_prod
     propagate_at_launch = true
   }
 }
 
-resource "aws_autoscaling_group_tag" "DepartmentGroup_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "DepartmentGroup_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
   tag {
     key                 = "DepartmentGroup"
-    value               = local.DepartmentGroup_monitoring
+    value               = local.DepartmentGroup_goapp_prod
     propagate_at_launch = true
   }
 }
 
-resource "aws_autoscaling_group_tag" "ResourceGroup_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "ResourceGroup_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
   tag {
     key                 = "ResourceGroup"
-    value               = local.ResourceGroup_monitoring
+    value               = local.ResourceGroup_goapp_prod
     propagate_at_launch = true
   }
 }
 
-resource "aws_autoscaling_group_tag" "Services_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "Services_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
   tag {
     key                 = "Service"
-    value               = local.Services_monitoring
+    value               = local.Services_goapp_prod
     propagate_at_launch = true
   }
 }
 
 // Mandatory TAGS for Cluster-Autoscaller
-resource "aws_autoscaling_group_tag" "Clustername_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "Clustername_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
@@ -198,10 +197,10 @@ resource "aws_autoscaling_group_tag" "Clustername_group_tag_devops_monitoring" {
   }
 }
 
-resource "aws_autoscaling_group_tag" "Autoscaler_ownership_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "Autoscaler_ownership_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
@@ -212,10 +211,10 @@ resource "aws_autoscaling_group_tag" "Autoscaler_ownership_group_tag_devops_moni
   }
 }
 
-resource "aws_autoscaling_group_tag" "Autoscaler_enable_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "Autoscaler_enable_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
@@ -226,10 +225,10 @@ resource "aws_autoscaling_group_tag" "Autoscaler_enable_group_tag_devops_monitor
   }
 }
 
-resource "aws_autoscaling_group_tag" "Terraform_group_tag_devops_monitoring" {
+resource "aws_autoscaling_group_tag" "Terraform_group_tag_goapp_prod" {
   for_each = toset(
     [for asg in flatten(
-      [for resources in aws_eks_node_group.devops["monitoring"].resources : resources.autoscaling_groups]
+      [for resources in aws_eks_node_group.goapp["prod"].resources : resources.autoscaling_groups]
     ) : asg.name]
   )
   autoscaling_group_name = each.value
@@ -244,19 +243,18 @@ resource "aws_autoscaling_group_tag" "Terraform_group_tag_devops_monitoring" {
 #  Autoscaling Output
 # --------------------------------------------------------------------------
 ## Scale Down ##
-output "eks_node_scale_down_devops_monitoring" {
-  value = aws_autoscaling_schedule.scale_down_devops_monitoring.arn
+output "eks_node_scale_down_goapp_prod" {
+  value = aws_autoscaling_schedule.scale_down_goapp_prod.arn
 }
 
 ## Scale Up ##
-output "eks_node_scale_up_devops_monitoring" {
-  value = aws_autoscaling_schedule.scale_up_devops_monitoring.arn
+output "eks_node_scale_up_goapp_prod" {
+  value = aws_autoscaling_schedule.scale_up_goapp_prod.arn
 }
 
 # --------------------------------------------------------------------------
 #  Autoscaling Node Group Output
 # --------------------------------------------------------------------------
-## Monitoring Output #
-output "eks_node_asg_group_devops_monitoring" {
-  value = aws_eks_node_group.devops["monitoring"].resources[0].autoscaling_groups[0].name
+output "eks_node_asg_group_goapp_prod" {
+  value = aws_eks_node_group.goapp["prod"].resources[0].autoscaling_groups[0].name
 }

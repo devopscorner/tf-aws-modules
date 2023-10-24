@@ -8,8 +8,8 @@
 # ==========================================================================
 
 resource "aws_security_group" "eks_sg" {
-  name        = "${var.eks_cluster_name}-eks-${var.env[local.env]}-sg"
-  description = "${var.eks_cluster_name}-eks-${var.env[local.env]} security groups"
+  name        = "${var.eks_cluster_name}-eks-${var.eks_name_env[local.env]}-sg"
+  description = "${var.eks_cluster_name}-eks-${var.eks_name_env[local.env]} security groups"
   vpc_id      = data.aws_vpc.selected.id
 
   ingress {

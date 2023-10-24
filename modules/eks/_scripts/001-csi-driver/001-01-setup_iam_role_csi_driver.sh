@@ -52,7 +52,7 @@ cat <<EOF > kms-key-for-encryption-on-ebs.json
         "kms:ListGrants",
         "kms:RevokeGrant"
       ],
-      "Resource": ["arn:aws:kms:ap-southeast-1:YOUR_AWS_ACCOUNT:key/HASH_ID"],
+      "Resource": ["arn:aws:kms:ap-southeast-1:YOUR_AWS_ACCOUNT:key/CMK_KEY_HASH"],
       "Condition": {
         "Bool": {
           "kms:GrantIsForAWSResource": "true"
@@ -68,7 +68,7 @@ cat <<EOF > kms-key-for-encryption-on-ebs.json
         "kms:GenerateDataKey*",
         "kms:DescribeKey"
       ],
-      "Resource": ["arn:aws:kms:ap-southeast-1:YOUR_AWS_ACCOUNT:key/HASH_ID"]
+      "Resource": ["arn:aws:kms:ap-southeast-1:YOUR_AWS_ACCOUNT:key/CMK_KEY_HASH"]
     }
   ]
 }

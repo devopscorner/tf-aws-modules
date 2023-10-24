@@ -15,6 +15,65 @@ Production Grade Modularity AWS Terraform Modules
 [![license](https://img.shields.io/github/license/devopscorner/tf-aws-modules)](https://img.shields.io/github/license/devopscorner/tf-aws-modules)
 
 ---
+## Version 1.2.1
+
+### Features
+
+- Multi Provider AWS
+  - Terraform Provider
+
+    ```
+    terraform {
+      required_version = ">= 1.5.0"
+
+      required_providers {
+        aws = {
+          source  = "hashicorp/aws"
+          version = ">= 4.50.0, < 5.7"
+        }
+
+        random = ">= 2.0"
+      }
+    }
+    ```
+
+  - OpenTofu Provider
+
+    ```
+    terraform {
+      required_version = ">= 1.5.0"
+
+      required_providers {
+        aws = {
+          source  = "opentofu/aws"
+          version = ">= 4.50.0, < 5.7"
+        }
+
+        random = ">= 2.0"
+      }
+    }
+    ```
+
+- Tested OpenTofu Environment
+  - OpenTofu AMD 64-bit
+
+    ```
+    tofu version
+    ---
+    OpenTofu v1.6.0-alpha3
+    on linux_amd64
+    ```
+
+  - OpenTofu ARM 64-bit
+
+    ```
+    tofu version
+    ---
+    OpenTofu v1.6.0-alpha3
+    on darwin_arm64
+    ```
+
+---
 ## Version 1.2.0
 
 ### Features

@@ -12,7 +12,7 @@
 # --------------------------------------------------------------------------
 locals {
   s3_tags = {
-    "Name"          = "${var.eks_cluster_name}-${var.env[local.env]}-eks-bucket"
+    "Name"          = "${var.eks_cluster_name}-${var.eks_name_env[local.env]}-eks-bucket"
     "ResourceGroup" = "${var.environment[local.env]}-S3-EKS"
   }
 }
@@ -21,7 +21,7 @@ locals {
 # S3 (Object) #
 ###############
 locals {
-  bucket_name = "${var.eks_cluster_name}-${var.env[local.env]}-eks-bucket"
+  bucket_name = "${var.eks_cluster_name}-${var.eks_name_env[local.env]}-eks-bucket"
   region      = var.aws_region
 }
 

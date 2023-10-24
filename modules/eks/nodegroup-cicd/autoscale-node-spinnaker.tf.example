@@ -192,7 +192,7 @@ resource "aws_autoscaling_group_tag" "Clustername_group_tag_spinnaker_prod" {
   autoscaling_group_name = each.value
   tag {
     key                 = "ClusterName"
-    value               = "${var.eks_cluster_name}-${var.env[local.env]}"
+    value               = "${var.eks_cluster_name}-${var.eks_name_env[local.env]}"
     propagate_at_launch = true
   }
 }
@@ -205,7 +205,7 @@ resource "aws_autoscaling_group_tag" "Autoscaler_ownership_group_tag_spinnaker_p
   )
   autoscaling_group_name = each.value
   tag {
-    key                 = "k8s.io/cluster-autoscaler/${var.eks_cluster_name}-${var.env[local.env]}"
+    key                 = "k8s.io/cluster-autoscaler/${var.eks_cluster_name}-${var.eks_name_env[local.env]}"
     value               = "owned"
     propagate_at_launch = true
   }

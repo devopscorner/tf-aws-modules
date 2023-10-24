@@ -10,7 +10,7 @@
 #  EC2 & Bucket Profile Roles
 # --------------------------------------------------------------------------
 resource "aws_iam_role" "iam_eks_bucket_profile" {
-  name = "eks-role-${var.eks_cluster_name}-${var.env[local.env]}-bucket"
+  name = "eks-role-${var.eks_cluster_name}-${var.eks_name_env[local.env]}-bucket"
 
   assume_role_policy = <<EOF
 {
@@ -50,7 +50,7 @@ data "aws_iam_policy_document" "eks_bucket_policy" {
 # IAM Role Configuration for EKS Cluster and Nodes
 ##############################################################
 resource "aws_iam_role" "eks_cluster" {
-  name = "eks-role-${var.eks_cluster_name}-${var.env[local.env]}-cluster"
+  name = "eks-role-${var.eks_cluster_name}-${var.eks_name_env[local.env]}-cluster"
 
   assume_role_policy = <<POLICY
 {
@@ -79,7 +79,7 @@ resource "aws_iam_role_policy_attachment" "eks_iam_service_policy" {
 }
 
 resource "aws_iam_role" "eks_nodes" {
-  name = "eks-role-${var.eks_cluster_name}-${var.env[local.env]}-nodes"
+  name = "eks-role-${var.eks_cluster_name}-${var.eks_name_env[local.env]}-nodes"
 
   assume_role_policy = <<POLICY
 {
@@ -113,7 +113,7 @@ resource "aws_iam_role_policy_attachment" "eks_iam_container_registry_policy" {
 }
 
 resource "aws_iam_policy" "route53_cert_policy" {
-  name   = "aws-route53-cert-${var.eks_cluster_name}-${var.env[local.env]}"
+  name   = "aws-route53-cert-${var.eks_cluster_name}-${var.eks_name_env[local.env]}"
   policy = <<POLICY
 {
 	"Version": "2012-10-17",
@@ -148,7 +148,7 @@ locals {
 }
 
 resource "aws_iam_role" "cluster_autoscaler_role" {
-  name = "cluster-autoscaler-${var.eks_cluster_name}-${var.env[local.env]}-role"
+  name = "cluster-autoscaler-${var.eks_cluster_name}-${var.eks_name_env[local.env]}-role"
 
   assume_role_policy = jsonencode({
     "Version" : "2012-10-17",
@@ -170,7 +170,7 @@ resource "aws_iam_role" "cluster_autoscaler_role" {
 }
 
 resource "aws_iam_role_policy" "cluster_autoscaler_policy" {
-  name = "cluster-autoscaler-${var.eks_cluster_name}-${var.env[local.env]}-policy"
+  name = "cluster-autoscaler-${var.eks_cluster_name}-${var.eks_name_env[local.env]}-policy"
   role = aws_iam_role.cluster_autoscaler_role.id
 
   policy = jsonencode({
@@ -216,7 +216,7 @@ resource "null_resource" "eks_cluster_autoscaler_role" {
 }
 
 resource "aws_iam_role_policy" "node_autoscaler_policy" {
-  name = "node-autoscaler-${var.eks_cluster_name}-${var.env[local.env]}-policy"
+  name = "node-autoscaler-${var.eks_cluster_name}-${var.eks_name_env[local.env]}-policy"
   role = aws_iam_role.eks_nodes.id
 
   policy = jsonencode({
@@ -240,7 +240,7 @@ resource "aws_iam_role_policy" "node_autoscaler_policy" {
 }
 
 resource "aws_iam_role_policy" "aws_loadbalancer_controller" {
-  name = "aws-loadbalancer-${var.eks_cluster_name}-${var.env[local.env]}-policy"
+  name = "aws-loadbalancer-${var.eks_cluster_name}-${var.eks_name_env[local.env]}-policy"
   role = aws_iam_role.eks_nodes.id
 
   policy = jsonencode({

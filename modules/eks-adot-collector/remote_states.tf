@@ -16,7 +16,7 @@ data "terraform_remote_state" "core_state" {
   workspace = local.env
 
   config = {
-    bucket = "devopscorner-terraform-remote-state"
+    bucket = "devopscorner-tf-remote-state"
     key    = "core/terraform.tfstate"
     region = var.aws_region
   }
@@ -27,7 +27,7 @@ data "terraform_remote_state" "eks_state" {
   workspace = local.env
 
   config = {
-    bucket = "devopscorner-terraform-remote-state"
+    bucket = "devopscorner-tf-remote-state"
     key    = "resources/eks/terraform.tfstate"
     region = var.aws_region
   }

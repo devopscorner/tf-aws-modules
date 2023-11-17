@@ -6,7 +6,7 @@ Production Grade Modularity AWS Terraform Modules
 ![tags](https://img.shields.io/github/v/tag/devopscorner/tf-aws-modules?sort=semver)
 ![terraform](https://img.shields.io/static/v1?logo=terraform&logoColor=white&label=terraform&message=1.5.2&color=orange)
 ![download all](https://img.shields.io/github/downloads/devopscorner/tf-aws-modules/total.svg)
-![download latest](https://img.shields.io/github/downloads/devopscorner/tf-aws-modules/1.1.0/total)
+![download latest](https://img.shields.io/github/downloads/devopscorner/tf-aws-modules/1.2.2/total)
 ![view](https://views.whatilearened.today/views/github/devopscorner/tf-aws-modules.svg)
 ![clone](https://img.shields.io/badge/dynamic/json?color=success&label=clone&query=count&url=https://raw.githubusercontent.com/devopscorner/tf-aws-modules/master/clone.json?raw=True&logo=github)
 ![issues](https://img.shields.io/github/issues/devopscorner/tf-aws-modules)

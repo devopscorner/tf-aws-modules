@@ -15,6 +15,14 @@ Production Grade Modularity AWS Terraform Modules
 [![license](https://img.shields.io/github/license/devopscorner/tf-aws-modules)](https://img.shields.io/github/license/devopscorner/tf-aws-modules)
 
 ---
+## Version 1.2.2
+
+### Features
+
+- Update IAM Role for CSI Driver
+- Update Output EKS Cluster for AWS Kubeauth
+
+---
 ## Version 1.2.1
 
 ### Features

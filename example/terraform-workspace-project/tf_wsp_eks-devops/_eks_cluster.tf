@@ -40,6 +40,15 @@ data:
       groups:
         - system:bootstrappers
         - system:nodes
+    - rolearn: arn:aws:iam::${var.aws_account_id}:role/devopscorner-Lead
+      username: devops
+      groups:
+        - engineering:ops
+  mapUsers: |
+    - userarn: arn:aws:iam::${var.aws_account_id}:user/devops
+      username: devops
+      groups:
+        - system:masters
 CONFIGMAPAWSAUTH
 
   kubeconfig = <<KUBECONFIG
